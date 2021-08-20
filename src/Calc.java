@@ -20,6 +20,12 @@ public class Calc {
         int rome = 0;
         RomeNumber romeNumber1 = new RomeNumber();
         RomeNumber romeNumber2 = new RomeNumber();
+        if (word1.contains(".")){
+            throw new MyException("Первое арабское число должно быть целым");
+        }
+        if (word2.contains(".")){
+            throw new MyException("Второе арабское число должно быть целым");
+        }
         if (romeNumber1.isNumeric(word1)== true && romeNumber2.isNumeric(word2)== true) {
             number1 = Integer.parseInt(words[0]);
             number2 = Integer.parseInt(words[2]);
@@ -65,6 +71,8 @@ public class Calc {
                 }
                 break;
             case "/":
+                System.out.println(number1);
+                System.out.println(number2);
                 result = number1/number2;
                 if (result > 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
