@@ -26,6 +26,12 @@ public class Calc {
         if (word2.contains(".")){
             throw new MyException("Второе арабское число должно быть целым");
         }
+        if (word1.contains(",")){
+            throw new MyException("Первое арабское число должно быть целым");
+        }
+        if (word2.contains(",")){
+            throw new MyException("Второе арабское число должно быть целым");
+        }
         if (romeNumber1.isNumeric(word1)== true && romeNumber2.isNumeric(word2)== true) {
             number1 = Integer.parseInt(words[0]);
             number2 = Integer.parseInt(words[2]);
