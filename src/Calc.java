@@ -48,25 +48,25 @@ public class Calc {
         switch (words[1]){
             case "+":
                 result = number1+number2;
-                if (result < 1){
+                if (result >= 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
             case "-":
                 result = number1 - number2;
-                if (result < 1){
+                if (result >= 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
             case "*":
                 result = number1*number2;
-                if (result < 1){
+                if (result >= 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
             case "/":
                 result = number1/number2;
-                if (result < 1){
+                if (result >= 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
