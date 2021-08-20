@@ -14,9 +14,9 @@ public class Calc {
         }
         String word1 = words[0];
         String word2 = words[2];
-        int number1;
-        int number2;
-        int result;
+        double number1;
+        double number2;
+        double result;
         int rome = 0;
         RomeNumber romeNumber1 = new RomeNumber();
         RomeNumber romeNumber2 = new RomeNumber();
@@ -48,25 +48,25 @@ public class Calc {
         switch (words[1]){
             case "+":
                 result = number1+number2;
-                if (result >= 0 && result < 1){
+                if (result > 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
             case "-":
                 result = number1 - number2;
-                if (result >= 0 && result < 1){
+                if (result > 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
             case "*":
                 result = number1*number2;
-                if (result >= 0 && result < 1){
+                if (result > 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
             case "/":
                 result = number1/number2;
-                if (result >= 0 && result < 1){
+                if (result > 0 && result < 1){
                     throw new MyException("Результат меньше единицы");
                 }
                 break;
@@ -79,13 +79,15 @@ public class Calc {
                     throw new MyException("т.к. в римской системе нет отрицательных чисел");
                 }
                 else {
+                    int resultRome = (int)result;
                     String[] romeNumberOut = {"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", 	"XXIII", 	"XXIV", 	"XXV", 	"XXVI", 	"XXVII", 	"XXVIII", 	"XXIX", 	"XXX", 	"XXXI", 	"XXXII", 	"XXXIII", 	"XXXIV", 	"XXXV", 	"XXXVI", 	"XXXVII", 	"XXXVIII", 	"XXXIX", 	"XL", 	"XLI", 	"XLII", 	"XLIII", 	"XLIV", 	"XLV", 	"XLVI", 	"XLVII", 	"XLVIII", 	"XLIX", 	"L", 	"LI", 	"LII", 	"LIII", 	"LIV", 	"LV", 	"LVI", 	"LVII", 	"LVIII", 	"LIX", 	"LX", 	"LXI", 	"LXII", 	"LXIII", 	"LXIV", 	"LXV", 	"LXVI", 	"LXVII", 	"LXVIII", 	"LXIX", 	"LXX", 	"LXXI", 	"LXXII", 	"LXXIII", 	"LXXIV", 	"LXXV", 	"LXXVI", 	"LXXVII", 	"LXXVIII", 	"LXXIX", 	"LXXX", 	"LXXXI", 	"LXXXII", 	"LXXXIII", 	"LXXXIV", 	"LXXXV", 	"LXXXVI", 	"LXXXVII", 	"LXXXVIII", 	"LXXXIX", 	"XC", 	"XCI", 	"XCII", 	"XCIII", 	"XCIV", 	"XCV", 	"XCVI", 	"XCVII", 	"XCVIII", 	"XCIX", 	"C"
                     };
-                    System.out.println(romeNumberOut[result]);
+                    System.out.println(romeNumberOut[resultRome]);
                     break;
                 }
                 default:
-                    System.out.println(result);
+                    int resultInt = (int) result;
+                    System.out.println(resultInt);
                     break;
         }
         }
